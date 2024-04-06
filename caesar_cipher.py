@@ -1,12 +1,13 @@
 
 import sys
 
+print("Welcome to the Caesar Cipher Encoder")
 def caesar_cipher(text, shift):
     encoded_text = ""
 
     for char in text.upper():
         if char.isalpha():
-            shifted = ord(char) + shift % 26
+            shifted = ord(char) - shift % 26
             if shifted > ord('Z'):
                 shifted -= 26
             encoded_text += chr(shifted)
